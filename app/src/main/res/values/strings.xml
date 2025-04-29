@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Pokedex Challenge Android</string>
+    <string name="app_name">TaskListInterview</string>
+    <string name="pokemon_image">Pokemon Image</string>
+    <string name="types">Types: %s</string>
+    <string name="abilities">Abilities: %s</string>
+    <string name="stats">Stats: %s</string>
 </resources>
