@@ -28,7 +28,7 @@ data class AbilityDetails(
 )
 
 data class Stat(
-    val base_stat: Int,
+    val baseStat: Int,
     val stat: StatDetails
 )
 

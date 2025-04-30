@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class PokemonDetailsViewModel(private val pokemonRepository: PokemonRepository) : ViewModel() {
@@ -18,6 +19,7 @@ class PokemonDetailsViewModel(private val pokemonRepository: PokemonRepository) 
 
     fun fetchPokemonDetails(name: String) {
         viewModelScope.launch {
+            delay(1000)
             try {
                 val details = pokemonRepository.getPokemonDetails(name)
                 _pokemonDetails.value = details
