@@ -34,17 +34,14 @@ class PokemonDetailsActivity : AppCompatActivity() {
                 .into(pokemonImageView)
 
             val types = pokemonDetails.types.joinToString { it.type.name }
-            pokemonTypesTextView.text = getString(R.string.types, types)
+            pokemonTypesTextView.text = "Types: $types"
 
             val abilities = pokemonDetails.abilities.joinToString { it.ability.name }
             pokemonAbilitiesTextView.text = getString(R.string.abilities, abilities)
+            pokemonAbilitiesTextView.text = "Abilities: $abilities"
 
-            val stats = pokemonDetails.stats.joinToString { "${it.stat.name}: ${it.base_stat}" }
-            pokemonStatsTextView.text = getString(R.string.stats, stats)
-        }
-
-        viewModel.error.observe(this) { error ->
-            Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+            val stats = pokemonDetails.stats.joinToString { "${it.stat.name}: ${it.baseStat}" }
+            pokemonStatsTextView.text = "Stats: $stats"
         }
 
         viewModel.fetchPokemonDetails(pokemonName)
