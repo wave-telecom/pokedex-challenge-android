@@ -25,7 +25,6 @@ class PokemonAdapter(private var pokemonList: List<Pokemon>) :
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
         val currentPokemon = pokemonList[position]
-//        holder.nameTextView.text = currentPokemon.name
         val imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonId(currentPokemon.url)}.png"
         Glide.with(holder.itemView.context)
             .load(imageUrl)
